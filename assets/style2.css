@@ -1,0 +1,91 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+hr {
+    border: 1px solid #000;
+}
+
+/* Estilização do menu */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 80%;
+    text-align: left;
+}
+
+ul>li {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+ul>li:hover {
+    background-color: #555;
+}
+
+ul ul {
+    list-style-type: none;
+    padding: 0 20px;
+    margin: 0;
+}
+
+ul ul li {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+ul ul li:hover {
+    background-color: #f1f1f1;
+}
+
+ul ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+ul ul li a:hover {
+    color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    ul {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
