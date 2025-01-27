@@ -16,7 +16,7 @@ $pdo = Conexao::conectar();
 
 <body>
     <h1><a href="../../view/home/Homepage.php">Barber2Men</a></h1>
-    <form action="./model/ProdutosModel.php" method="POST">
+    <form action="../../model/ProdutosModel.php?metodo=create" method="POST">
         Nome: <input type="text" name="nome" id="nome" placeholder="Digite o nome do produto" required><br><br>
         Valor: <input type="text" name="valor" id="valor" placeholder="Digite o valor do produto" required><br><br>
         Marca: <input type="text" name="marca" id="marca" placeholder="Digite a marca do produto" required><br><br>

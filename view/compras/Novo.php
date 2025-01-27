@@ -16,7 +16,7 @@ $pdo = Conexao::conectar();
 
 <body>
     <h1><a href="../../view/home/Homepage.php">Barber2Men</a></h1>
-    <form action="./model/ComprasModel.php" method="POST">
+    <form action="../../model/ComprasModel.php?metodo=create" method="POST">
         Data: <input type="text" name="data" id="data" placeholder="Digite a data da compra" required><br><br>
         Horário: <input type="text" name="horario" id="horario" placeholder="Digite o horário da compra" required><br><br>
         Quantidade: <input type="text" name="qtd" id="qtd" placeholder="Digite a quantidade" required><br><br>

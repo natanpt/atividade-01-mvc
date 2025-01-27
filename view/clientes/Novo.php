@@ -16,7 +16,7 @@ $pdo = Conexao::conectar();
 
 <body>
     <h1><a href="../../view/home/Homepage.php">Barber2Men</a></h1>
-    <form action="./model/ClientesModel.php" method="POST">
+    <form action="../../model/ClientesModel.php?metodo=create" method="POST">
         Nome: <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required><br><br>
         CPF: <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF" required><br><br>
         Data de nascimento: <input type="text" name="dt_nasc" id="dt_nasc" placeholder="Digite sua data de nascimento" required><br><br>

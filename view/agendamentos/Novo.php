@@ -16,7 +16,7 @@ $pdo = Conexao::conectar();
 
 <body>
     <h1><a href="../../view/home/Homepage.php">Barber2Men</a></h1>
-    <form action="./model/AgendamentosModel.php" method="POST">
+    <form action="../../model/AgendamentosModel.php?metodo=create" method="POST">
         Data: <input type="text" name="data" id="data" placeholder="Digite a data do agendamento" required><br><br>
         Horário: <input type="text" name="horario" id="horario" placeholder="Digite o horário do agendamento" required><br><br>
         Duração: <input type="text" name="duracao" id="duracao" placeholder="Digite a duração do agendamento" required><br><br>
