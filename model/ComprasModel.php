@@ -1,15 +1,11 @@
 <?php
-include "../../core/Conexao.php";
-include "../../view/home/Homepage.php";
+require_once(__DIR__."../../core/Conexao.php");
 
     $metodo = $_GET['metodo'];
     $controllerInstance = new ComprasModel();
 
     if (method_exists($controllerInstance, $metodo)) {
         $controllerInstance->$metodo();
-    } else {
-        $homeController = new HomeController();
-        $homeController->index();
     }
 
 class ComprasModel {
@@ -28,7 +24,7 @@ class ComprasModel {
         $update->bindParam(':horario', $horario);
         $update->bindParam(':qtd', $qtd);
         $update->execute();
-        header("Location: ../../view/home/Homepage.php");
+        header("Location: ../view/home/Homepage.php");
     }
 
     public function create() {
@@ -47,7 +43,7 @@ class ComprasModel {
         $stmt->bindParam(':horario', $horario);
         $stmt->bindParam(':qtd', $qtd);
         $stmt->execute();
-        header("Location: ../../view/home/Homepage.php");
+        header("Location: ../view/home/Homepage.php");
     }
 }
 ?>

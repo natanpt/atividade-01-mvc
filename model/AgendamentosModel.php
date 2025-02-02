@@ -1,15 +1,11 @@
 <?php
-include "../../core/Conexao.php";
-include "../../view/home/Homepage.php";
+require_once(__DIR__."../../core/Conexao.php");
 
     $metodo = $_GET['metodo'];
     $controllerInstance = new AgendamentosModel();
 
     if (method_exists($controllerInstance, $metodo)) {
         $controllerInstance->$metodo();
-    } else {
-        $homeController = new HomeController();
-        $homeController->index();
     }
 
 class AgendamentosModel {
@@ -31,7 +27,7 @@ class AgendamentosModel {
         $update->bindParam(':duracao', $duracao);
         $update->bindParam(':status', $status);
         $update->execute();
-        header("Location: ../../view/home/Homepage.php");
+        header("Location: ../view/home/Homepage.php");
     }
 
     public function create() {
@@ -52,7 +48,7 @@ class AgendamentosModel {
         $stmt->bindParam(':duracao', $duracao);
         $stmt->bindParam(':status', $status);
         $stmt->execute();
-        header("Location: ../../view/home/Homepage.php");
+        header("Location: ../view/home/Homepage.php");
     }
 }
 ?>

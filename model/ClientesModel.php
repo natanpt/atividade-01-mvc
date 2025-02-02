@@ -1,10 +1,12 @@
 <?php
-include "../../core/Conexao.php";
-include "../../view/home/Homepage.php";
+require_once(__DIR__."../../core/Conexao.php");
 
     $metodo = $_GET['metodo'];
     $controllerInstance = new ClientesModel();
-    $controllerInstance->$metodo();
+
+    if (method_exists($controllerInstance, $metodo)) {
+        $controllerInstance->$metodo();
+    }
 
 class ClientesModel {
     public function edit() {
@@ -31,7 +33,7 @@ class ClientesModel {
         $update->bindParam(':num', $num);
         $update->bindParam(':bairro', $bairro);
         $update->execute();
-        header("Location: ../../view/home/Homepage.php");
+        header("Location: ../view/home/Homepage.php");
     }
 
     public function create() {
@@ -58,7 +60,7 @@ class ClientesModel {
         $stmt->bindParam(':num', $num);
         $stmt->bindParam(':bairro', $bairro);
         $stmt->execute();
-        header("Location: ../../view/home/Homepage.php");
+        header("Location: ../view/home/Homepage.php");
     }
 }
 ?>

@@ -20,7 +20,7 @@ $linha = $sql->fetch(PDO::FETCH_ASSOC);
 
 <body>
     <h1><a href="../../view/home/Homepage.php">Barber2Men</a></h1>
-    <form action="../../model/ProdutosModel.php?metodo=edit" method="POST">
+    <form action="../../model/ProdutosModel.php?metodo=edit&id=<?php echo$linha['id'] ?>" method="POST">
         Nome: <input type="text" name="nome" value="<?php echo $linha['nome']?>" id="nome"><br><br>
         Valor: <input type="text" name="valor" value="<?php echo $linha['valor']?>" id="valor"><br><br>
         Marca: <input type="text" name="marca" value="<?php echo $linha['marca']?>" id="marca"><br><br>

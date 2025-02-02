@@ -1,15 +1,11 @@
 <?php
-include "../../core/Conexao.php";
-include "../../view/home/Homepage.php";
+require_once(__DIR__."../../core/Conexao.php");
 
     $metodo = $_GET['metodo'];
     $controllerInstance = new ServicosModel();
 
     if (method_exists($controllerInstance, $metodo)) {
         $controllerInstance->$metodo();
-    } else {
-        $homeController = new HomeController();
-        $homeController->index();
     }
 
 class ServicosModel {
@@ -28,7 +24,7 @@ class ServicosModel {
         $update->bindParam(':valor', $valor);
         $update->bindParam(':descricao', $descricao);
         $update->execute();
-        header("Location: ../../view/home/Homepage.php");
+        header("Location: ../view/home/Homepage.php");
     }
 
     public function create() {
@@ -47,7 +43,7 @@ class ServicosModel {
         $stmt->bindParam(':valor', $valor);
         $stmt->bindParam(':descricao', $descricao);
         $stmt->execute();
-        header("Location: ../../view/home/Homepage.php");
+        header("Location: ../view/home/Homepage.php");
     }
 }
 ?>

@@ -1,15 +1,11 @@
 <?php
-include "../../core/Conexao.php";
-include "../../view/home/Homepage.php";
+require_once(__DIR__."../../core/Conexao.php");
 
     $metodo = $_GET['metodo'];
     $controllerInstance = new ProdutosModel();
 
     if (method_exists($controllerInstance, $metodo)) {
         $controllerInstance->$metodo();
-    } else {
-        $homeController = new HomeController();
-        $homeController->index();
     }
 
 class ProdutosModel {
@@ -31,7 +27,7 @@ class ProdutosModel {
         $update->bindParam(':marca', $marca);
         $update->bindParam(':categoria', $categoria);
         $update->execute();
-        header("Location: ../../view/home/Homepage.php");
+        header("Location: ../view/home/Homepage.php");
     }
 
     public function create() {
@@ -52,7 +48,7 @@ class ProdutosModel {
         $stmt->bindParam(':marca', $marca);
         $stmt->bindParam(':categoria', $categoria);
         $stmt->execute();
-        header("Location: ../../view/home/Homepage.php");
+        header("Location: ../view/home/Homepage.php");
     }
 }
 ?>

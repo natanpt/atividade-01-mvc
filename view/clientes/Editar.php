@@ -20,7 +20,7 @@ $linha = $sql->fetch(PDO::FETCH_ASSOC);
 
 <body>
     <h1><a href="../../view/home/Homepage.php">Barber2Men</a></h1>  
-    <form action="../../model/ClientesModel.php?metodo=edit" method="POST">
+    <form action="../../model/ClientesModel.php?metodo=edit&id=<?php echo$linha['id'] ?>" method="POST">
         Nome: <input type="text" name="nome" value="<?php echo $linha['nome']?>" id="nome"><br><br>
         CPF: <input type="text" name="cpf" value="<?php echo $linha['cpf']?>" id="cpf"><br><br>
         Data de nascimento: <input type="text" name="dt_nasc" value="<?php echo $linha['dt_nasc']?>" id="dt_nasc"><br><br>

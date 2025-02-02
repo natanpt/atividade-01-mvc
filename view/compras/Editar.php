@@ -20,7 +20,7 @@ $linha = $sql->fetch(PDO::FETCH_ASSOC);
 
 <body>
     <h1><a href="../../view/home/Homepage.php">Barber2Men</a></h1>
-    <form action="../../model/ComprasModel.php?metodo=edit" method="POST">
+    <form action="../../model/ComprasModel.php?metodo=edit&id=<?php echo$linha['id'] ?>" method="POST">
         Data: <input type="text" name="data" value="<?php echo $linha['data']?>" id="data"><br><br>
         Horário: <input type="text" name="horario" value="<?php echo $linha['horario']?>" id="horario"><br><br>
         Quantidade: <input type="text" name="qtd" value="<?php echo $linha['qtd']?>" id="qtd"><br><br>
